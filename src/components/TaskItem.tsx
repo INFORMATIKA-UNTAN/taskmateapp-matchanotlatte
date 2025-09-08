@@ -1,12 +1,8 @@
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import { Task } from '../../app/(tabs)/index';
+import { Task } from '../types/task';
 
 interface TaskItemProps {
-  task: Task & {
-    description: string;
-    category: string;
-    deadline: string;
-  };
+  task: Task;
   onToggle?: (task: Task) => void;
 }
 
@@ -26,7 +22,10 @@ export default function TaskItem({ task, onToggle }: TaskItemProps) {
           </Text>
         </View>
         <View
-          style={[styles.badge, isDone ? styles.badgeDone : styles.badgePending]}
+          style={[
+            styles.badge,
+            isDone ? styles.badgeDone : styles.badgePending,
+          ]}
         >
           <Text style={styles.badgeText}>{isDone ? 'Done' : 'Todo'}</Text>
         </View>

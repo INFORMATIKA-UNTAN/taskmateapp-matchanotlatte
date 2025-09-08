@@ -1,10 +1,6 @@
-import { Task } from '../../app/(tabs)/index';
+import { Task } from '../types/task';
 
-export const dummyTasks: (Task & {
-  description: string;
-  category: string;
-  deadline: string;
-})[] = [
+export const dummyTasks: Task[] = [
   {
     id: 1,
     title: 'Buat wireframe TaskMate',
