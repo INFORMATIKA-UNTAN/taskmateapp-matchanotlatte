@@ -25,4 +25,12 @@ export const dummyTasks: Task[] = [
     deadline: '2025-08-28',
     status: 'pending',
   },
+  {
+    id: 4,
+    title: 'Belajar Materi Smart City',
+    description: 'Materi pertemuan 5',
+    category: 'IOT',
+    deadline: '2025-10-01',
+    status: 'done',
+  },
 ];

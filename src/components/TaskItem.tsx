@@ -6,8 +6,15 @@ interface TaskItemProps {
   onToggle?: (task: Task) => void;
 }
 
+const categoryColors: Record<string, string> = {
+  Mobile: '#3b82f6', // biru
+  RPL: '#10b981',    // hijau
+  IoT: '#f59e0b',    // oranye
+};
+
 export default function TaskItem({ task, onToggle }: TaskItemProps) {
   const isDone = task.status === 'done';
+  const categoryColor = categoryColors[task.category] || '#94a3b8';
 
   return (
     <TouchableOpacity onPress={() => onToggle?.(task)} activeOpacity={0.7}>
@@ -19,6 +26,16 @@ export default function TaskItem({ task, onToggle }: TaskItemProps) {
           <Text style={styles.desc}>{task.description}</Text>
           <Text style={styles.meta}>
             {task.category} • Due {task.deadline}
+          </Text>
+        </View>
+        <View
+          style={[
+            styles.badge,
+            { backgroundColor: categoryColor },
+          ]}
+        >
+          <Text style={[styles.badgeText, { color: '#fff' }]}>
+            {task.category}
           </Text>
         </View>
         <View
@@ -56,6 +73,6 @@ const styles = StyleSheet.create({
     marginLeft: 12,
   },
   badgePending: { backgroundColor: '#fee2e2' },
-  badgeDone: { backgroundColor: '#dcfce7' },
+  badgeDone: { backgroundColor: '#22c55e' },
   badgeText: { fontWeight: '700', fontSize: 12 },
 });
