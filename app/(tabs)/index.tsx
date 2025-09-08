@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { SafeAreaView, StyleSheet, Text, FlatList } from 'react-native';
-import TaskItem from '@/src/components/TaskItem';
-import { dummyTasks } from '@/src/data/dummyTasks';
+import TaskItem from '../../src/components/TaskItem';
+import { dummyTasks } from '../../src/data/dummyTasks';
 
 
 export interface Task {
